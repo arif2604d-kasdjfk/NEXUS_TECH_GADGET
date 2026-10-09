@@ -1,150 +1,152 @@
-   <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | NovaTech Gadgets</title>
-    <!-- Google Fonts: Space Grotesk & Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-    <!-- FontAwesome for Icons -->
+    <title>Contact Us - NEXUS Next-Gen Tech & Gadgets</title>
+    <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- External CSS -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Assets/CSS/contact.css">
 </head>
 <body>
 
-    <!-- Header / Navbar -->
-    <header class="site-header">
-        <div class="nav-container">
-            <a href="#" class="logo"><i class="fa-solid fa-bolt"></i> Nova<span>Tech</span></a>
-            <nav class="nav-links">
-                <a href="#">Store</a>
-                <a href="#">Gadgets</a>
-                <a href="#">Support</a>
-                <a href="#" class="active">Contact</a>
-            </nav>
+    <!-- Header Navigation -->
+    <header class="navbar">
+        <div class="logo">
+            <a href="index.html">NEXUS<span class="logo-dot">.</span></a>
+        </div>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html" class="active">Contact Us</a>
+            <a href="about.html">About Us</a>
+        </nav>
+        <div class="nav-actions">
+            <button class="cart-btn">
+                <i class="fa-solid fa-cart-shopping"></i> Cart (<span id="cart-count">0</span>)
+            </button>
         </div>
     </header>
 
     <!-- Main Contact Section -->
-    <main class="contact-main">
-        <div class="container">
-            <!-- Page Title Header -->
-            <div class="section-header">
-                <span class="badge"><i class="fa-solid fa-headset"></i> We're Here to Help</span>
-                <h1>Get in Touch with NovaTech</h1>
-                <p>Got questions about our next-gen smart gadgets, warranty claims, or bulk orders? Drop us a message below.</p>
-            </div>
+    <main class="contact-container">
+        
+        <!-- Page Header -->
+        <section class="contact-header">
+            <span class="badge">
+                <span class="badge-fire">🔥</span> Get In Touch
+            </span>
+            <h1>We'd Love to Hear From You</h1>
+            <p>Have questions about our next-gen gadgets, orders, or custom tech setups? Reach out to our expert team anytime.</p>
+        </section>
 
-            <div class="contact-grid">
-                <!-- Left Column: Info & Live Status Cards -->
-                <div class="info-column">
-                    <!-- Support Status Card -->
-                    <div class="card status-card">
-                        <div class="status-indicator">
-                            <span class="pulse-dot"></span>
-                            <span class="status-text">Live Support Online</span>
-                        </div>
-                        <p class="status-sub">Average response time: <strong>Under 15 mins</strong></p>
+        <!-- Content Grid (Cards + Form) -->
+        <div class="contact-grid">
+            
+            <!-- Left Info Sidebar -->
+            <div class="contact-info">
+                
+                <div class="info-card">
+                    <div class="icon-box">
+                        <i class="fa-solid fa-location-dot"></i>
                     </div>
-
-                    <!-- Contact Details Cards -->
-                    <div class="card info-card">
-                        <div class="icon-box"><i class="fa-solid fa-envelope"></i></div>
-                        <div>
-                            <h3>Email Support</h3>
-                            <p class="text-muted">support@novatech-gadgets.com</p>
-                        </div>
-                    </div>
-
-                    <div class="card info-card">
-                        <div class="icon-box"><i class="fa-solid fa-phone-volume"></i></div>
-                        <div>
-                            <h3>Hotline</h3>
-                            <p class="text-muted">+1 (800) 555-TECH</p>
-                        </div>
-                    </div>
-
-                    <div class="card info-card">
-                        <div class="icon-box"><i class="fa-solid fa-location-dot"></i></div>
-                        <div>
-                            <h3>HQ Innovation Lab</h3>
-                            <p class="text-muted">Silicon Valley, CA 94025, USA</p>
-                        </div>
-                    </div>
-
-                    <!-- FAQ Quick Banner -->
-                    <div class="card faq-banner">
-                        <h3>Looking for Quick Answers?</h3>
-                        <p class="text-muted">Check out our FAQ section for tracking orders, firmware updates, and setup guides.</p>
-                        <a href="#" class="btn-outline">Visit Help Center <i class="fa-solid fa-arrow-right"></i></a>
+                    <div>
+                        <h3>Headquarters</h3>
+                        <p>102 Innovation Way, Tech District<br>San Francisco, CA 94107</p>
                     </div>
                 </div>
 
-                <!-- Right Column: Contact Form -->
-                <div class="form-column">
-                    <div class="card form-card">
-                        <h2>Send Us a Message</h2>
-                        <form id="contactForm">
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="fullName">Your Name</label>
-                                    <input type="text" id="fullName" placeholder="John Doe" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="email">Email Address</label>
-                                    <input type="email" id="email" placeholder="john@example.com" required>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="subject">Subject / Gadget Model</label>
-                                <select id="subject">
-                                    <option value="general">General Inquiry</option>
-                                    <option value="quantum-watch">Nova Quantum Watch Pro</option>
-                                    <option value="cyber-buds">CyberBeats TWS Earbuds</option>
-                                    <option value="warranty">Warranty & Repair Claim</option>
-                                    <option value="bulk">Bulk / Corporate Order</option>
-                                </select>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="message">Your Message</label>
-                                <textarea id="message" rows="5" placeholder="Tell us how we can help you..." required></textarea>
-                            </div>
-
-                            <button type="submit" class="btn-primary" id="submitBtn">
-                                <span>Send Message</span>
-                                <i class="fa-solid fa-paper-plane"></i>
-                            </button>
-
-                            <!-- Success Alert Box (Hidden by default) -->
-                            <div id="successMessage" class="success-alert" style="display: none;">
-                                <i class="fa-solid fa-circle-check"></i>
-                                <span>Thank you! Your message has been sent successfully. Our support team will contact you shortly.</span>
-                            </div>
-                        </form>
+                <div class="info-card">
+                    <div class="icon-box">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <div>
+                        <h3>Email Us</h3>
+                        <p>support@nexusgadgets.tech</p>
+                        <p>sales@nexusgadgets.tech</p>
                     </div>
                 </div>
+
+                <div class="info-card">
+                    <div class="icon-box">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <div>
+                        <h3>Call Support</h3>
+                        <p>+1 (800) 555-NEXUS</p>
+                        <p>Mon - Fri, 9:00 AM - 6:00 PM PST</p>
+                    </div>
+                </div>
+
+                <!-- Connect / Social Links -->
+                <div class="social-box">
+                    <h3>Follow NEXUS</h3>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
+                    </div>
+                </div>
+
             </div>
+
+            <!-- Right Contact Form -->
+            <div class="contact-form-card">
+                <h2>Send Us a Message</h2>
+                <p>Fill out the form below and we'll respond within 24 hours.</p>
+
+                <form id="contactForm" novalidate>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fullName">Full Name</label>
+                            <input type="text" id="fullName" placeholder="John Doe" required>
+                            <span class="error-msg" id="nameError">Please enter your name</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" placeholder="john@example.com" required>
+                            <span class="error-msg" id="emailError">Please enter a valid email</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <select id="subject" required>
+                            <option value="" disabled selected>Select a topic...</option>
+                            <option value="Product Inquiry">Product Inquiry</option>
+                            <option value="Order & Shipping">Order & Shipping</option>
+                            <option value="Technical Support">Technical Support</option>
+                            <option value="Partnership">Partnership / Business</option>
+                        </select>
+                        <span class="error-msg" id="subjectError">Please select a subject</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" rows="5" placeholder="Tell us how we can help..." required></textarea>
+                        <span class="error-msg" id="messageError">Please enter your message</span>
+                    </div>
+
+                    <button type="submit" class="btn-primary" id="submitBtn">
+                        <span>Send Message</span>
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                    
+                    <!-- Form Status Alert -->
+                    <div id="formStatus" class="form-status"></div>
+                </form>
+            </div>
+
         </div>
+
     </main>
 
-    <!-- Footer -->
-    <footer class="site-footer">
-        <div class="container footer-content">
-            <p>&copy; 2026 NovaTech Gadgets. All rights reserved.</p>
-            <div class="footer-links">
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
-                <a href="#">Returns</a>
-            </div>
-        </div>
-    </footer>
-
-    <!-- External JavaScript -->
-    <script src="script.js"></script>
+    <!-- External JS -->
+    <script src="Assets/JS/contact.js"></script>
 </body>
 </html>
