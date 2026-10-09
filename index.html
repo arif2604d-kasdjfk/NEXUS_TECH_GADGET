@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXUS - Next-Gen Tech & Gadgets</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="Assets/CSS/style.css">
+</head>
+<body>
+
+    <!-- Header / Navigation -->
+    <header class="navbar">
+        <div class="logo">NEXUS<span>.</span></div>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="services.html">Services</a>
+            <a href="contact_us.html">Contact Us</a>
+            <a href="about_us.html">About Us</a>
+        </nav>
+        <div class="nav-actions">
+            <button class="cart-btn">🛒 Cart (<span id="cart-count">0</span>)</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <span class="badge">🔥 Next Generation Tech</span>
+            <h1>Experience the Future of Smart Living</h1>
+            <p>Discover cutting-edge gadgets, wearable technology, and premium audio devices engineered for tomorrow.</p>
+            <div class="hero-btns">
+                <a href="#products" class="btn primary-btn">Explore Gadgets</a>
+                <a href="#categories" class="btn secondary-btn">Browse Categories</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="Assets/Images/first.png" alt="Futuristic VR Headset">
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories" id="categories">
+        <h2>Top Categories</h2>
+        <div class="category-grid">
+            <div class="cat-card">
+                <span>🎧</span>
+                <h3>Audio & Sound</h3>
+            </div>
+            <div class="cat-card">
+                <span>⌚</span>
+                <h3>Wearables</h3>
+            </div>
+            <div class="cat-card">
+                <span>🥽</span>
+                <h3>VR & AR</h3>
+            </div>
+            <div class="cat-card">
+                <span>🛸</span>
+                <h3>Drones & Robotics</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section class="products" id="products">
+        <h2>Featured Products</h2>
+        <div class="product-grid">
+
+            <!-- Product Card 1 -->
+            <div class="product-card">
+                <div class="img-box">
+                    <img src="Assets/Images/second.png" alt="Wireless Noise Canceling Headphones">
+                </div>
+                <div class="product-info">
+                    <span class="category-tag">Audio</span>
+                    <h3>SonicPro Wireless Headphones</h3>
+                    <p class="description">Active noise cancellation with 40-hour battery life.</p>
+                    <div class="product-bottom">
+                        <span class="price">$299.99</span>
+                        <button class="add-to-cart-btn" onclick="addToCart('SonicPro Headphones')">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Card 2 -->
+            <div class="product-card">
+                <div class="img-box">
+                    <img src="Assets/Images/third.png" alt="Smart Fitness Watch">
+                </div>
+                <div class="product-info">
+                    <span class="category-tag">Wearables</span>
+                    <h3>Aura Smartwatch V2</h3>
+                    <p class="description">Real-time health tracking, AMOLED display, waterproof.</p>
+                    <div class="product-bottom">
+                        <span class="price">$199.99</span>
+                        <button class="add-to-cart-btn" onclick="addToCart('Aura Smartwatch V2')">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Card 3 -->
+            <div class="product-card">
+                <div class="img-box">
+                    <img src="Assets/Images/fourth.png" alt="4K Camera Drone">
+                </div>
+                <div class="product-info">
+                    <span class="category-tag">Drones</span>
+                    <h3>SkyHawk 4K Drone</h3>
+                    <p class="description">Ultra HD video recording with smart obstacle avoidance.</p>
+                    <div class="product-bottom">
+                        <span class="price">$499.99</span>
+                        <button class="add-to-cart-btn" onclick="addToCart('SkyHawk 4K Drone')">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2026 NEXUS Tech Inc. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JS Script Link -->
+    <script src="Assets/JS/script.js"></script>
+</body>
+</html>
