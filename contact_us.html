@@ -1,0 +1,150 @@
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | NovaTech Gadgets</title>
+    <!-- Google Fonts: Space Grotesk & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="site-header">
+        <div class="nav-container">
+            <a href="#" class="logo"><i class="fa-solid fa-bolt"></i> Nova<span>Tech</span></a>
+            <nav class="nav-links">
+                <a href="#">Store</a>
+                <a href="#">Gadgets</a>
+                <a href="#">Support</a>
+                <a href="#" class="active">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Contact Section -->
+    <main class="contact-main">
+        <div class="container">
+            <!-- Page Title Header -->
+            <div class="section-header">
+                <span class="badge"><i class="fa-solid fa-headset"></i> We're Here to Help</span>
+                <h1>Get in Touch with NovaTech</h1>
+                <p>Got questions about our next-gen smart gadgets, warranty claims, or bulk orders? Drop us a message below.</p>
+            </div>
+
+            <div class="contact-grid">
+                <!-- Left Column: Info & Live Status Cards -->
+                <div class="info-column">
+                    <!-- Support Status Card -->
+                    <div class="card status-card">
+                        <div class="status-indicator">
+                            <span class="pulse-dot"></span>
+                            <span class="status-text">Live Support Online</span>
+                        </div>
+                        <p class="status-sub">Average response time: <strong>Under 15 mins</strong></p>
+                    </div>
+
+                    <!-- Contact Details Cards -->
+                    <div class="card info-card">
+                        <div class="icon-box"><i class="fa-solid fa-envelope"></i></div>
+                        <div>
+                            <h3>Email Support</h3>
+                            <p class="text-muted">support@novatech-gadgets.com</p>
+                        </div>
+                    </div>
+
+                    <div class="card info-card">
+                        <div class="icon-box"><i class="fa-solid fa-phone-volume"></i></div>
+                        <div>
+                            <h3>Hotline</h3>
+                            <p class="text-muted">+1 (800) 555-TECH</p>
+                        </div>
+                    </div>
+
+                    <div class="card info-card">
+                        <div class="icon-box"><i class="fa-solid fa-location-dot"></i></div>
+                        <div>
+                            <h3>HQ Innovation Lab</h3>
+                            <p class="text-muted">Silicon Valley, CA 94025, USA</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Quick Banner -->
+                    <div class="card faq-banner">
+                        <h3>Looking for Quick Answers?</h3>
+                        <p class="text-muted">Check out our FAQ section for tracking orders, firmware updates, and setup guides.</p>
+                        <a href="#" class="btn-outline">Visit Help Center <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Right Column: Contact Form -->
+                <div class="form-column">
+                    <div class="card form-card">
+                        <h2>Send Us a Message</h2>
+                        <form id="contactForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="fullName">Your Name</label>
+                                    <input type="text" id="fullName" placeholder="John Doe" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email Address</label>
+                                    <input type="email" id="email" placeholder="john@example.com" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="subject">Subject / Gadget Model</label>
+                                <select id="subject">
+                                    <option value="general">General Inquiry</option>
+                                    <option value="quantum-watch">Nova Quantum Watch Pro</option>
+                                    <option value="cyber-buds">CyberBeats TWS Earbuds</option>
+                                    <option value="warranty">Warranty & Repair Claim</option>
+                                    <option value="bulk">Bulk / Corporate Order</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Your Message</label>
+                                <textarea id="message" rows="5" placeholder="Tell us how we can help you..." required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn-primary" id="submitBtn">
+                                <span>Send Message</span>
+                                <i class="fa-solid fa-paper-plane"></i>
+                            </button>
+
+                            <!-- Success Alert Box (Hidden by default) -->
+                            <div id="successMessage" class="success-alert" style="display: none;">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>Thank you! Your message has been sent successfully. Our support team will contact you shortly.</span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <p>&copy; 2026 NovaTech Gadgets. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Returns</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- External JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
