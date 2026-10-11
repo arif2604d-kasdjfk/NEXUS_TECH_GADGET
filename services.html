@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | NEXUS - Next-Gen Tech & Gadgets</title>
+
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="Assets/CSS/services.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%230f172a'/><path d='M30 70 V30 L55 60 V30 H70 V70 L45 40 V70 Z' fill='%2306b6d4'/><circle cx='70' cy='70' r='5' fill='%236366f1'/></svg>">
+</head>
+<body>
+
+    <!-- Header / Navigation -->
+    <header class="navbar">
+        <div class="logo">NEXUS<span>.</span></div>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="services.html" class="active">Services</a>
+            <a href="contact_us.html">Contact Us</a>
+            <a href="about_us.html">About Us</a>
+        </nav>
+        <div class="nav-actions">
+            <button class="cart-btn" id="cart-toggle">🛒 Cart (<span id="cart-count">0</span>)</button>
+        </div>
+    </header>
+
+    <!-- Services Hero Section -->
+    <section class="gallery-hero">
+        <div class="gallery-hero-content">
+            <span class="badge">🛠️ Expert Solutions & Care</span>
+            <h1>Next-Gen Tech Services</h1>
+            <p>From precision repairs and custom PC assembly to complete smart home automation and VR calibration.</p>
+        </div>
+    </section>
+
+    <!-- Service Category Filter Tabs -->
+    <section class="gallery-toolbar">
+        <div class="toolbar-container" style="justify-content: center;">
+            <div class="filter-tabs">
+                <button class="filter-btn active" onclick="filterServices('all', this)">All Services</button>
+                <button class="filter-btn" onclick="filterServices('repair', this)">Hardware Repair</button>
+                <button class="filter-btn" onclick="filterServices('setup', this)">Custom Setup</button>
+                <button class="filter-btn" onclick="filterServices('smarthome', this)">Smart Home</button>
+                <button class="filter-btn" onclick="filterServices('enterprise', this)">Enterprise</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="gallery-section">
+        <div class="product-grid" id="services-grid">
+
+            <!-- Service Card 1 -->
+            <div class="product-card service-item" data-category="repair">
+                <div class="img-box">
+                    <img src="https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?auto=format&fit=crop&w=800&q=80" alt="Precision Micro-Soldering & Repair">
+                </div>
+                <div class="product-info">
+                    <div class="card-header">
+                        <span class="category-tag">Hardware Repair</span>
+                        <span class="rating"><i class="fa-solid fa-shield-halved"></i> 90-Day Warranty</span>
+                    </div>
+                    <h3>Precision Micro-Soldering & Repair</h3>
+                    <p class="description">Component-level diagnostics, circuit repair, and battery replacement for high-end audio, drones, and wearables.</p>
+                    <div class="product-bottom">
+                        <span class="price">From $79.99</span>
+                        <button class="add-to-cart-btn" onclick="openBookingModal('Precision Micro-Soldering & Repair')">Book Service</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service Card 2 -->
+            <div class="product-card service-item" data-category="setup">
+                <div class="img-box">
+                    <img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=800&q=80" alt="Custom AI & Gaming Rig Assembly">
+                </div>
+                <div class="product-info">
+                    <div class="card-header">
+                        <span class="category-tag">Custom Setup</span>
+                        <span class="rating"><i class="fa-solid fa-bolt"></i> Custom Build</span>
+                    </div>
+                    <h3>Custom AI & Gaming Rig Assembly</h3>
+                    <p class="description">Bespoke PC builds tailored for workstation AI modeling, 4K high-FPS gaming, and hardline liquid cooling loops.</p>
+                    <div class="product-bottom">
+                        <span class="price">From $149.99</span>
+                        <button class="add-to-cart-btn" onclick="openBookingModal('Custom AI & Gaming Rig Assembly')">Book Service</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service Card 3 -->
+            <div class="product-card service-item" data-category="smarthome">
+                <div class="img-box">
+                    <img src="https://images.unsplash.com/photo-1558089687-f282ffcbc126?auto=format&fit=crop&w=800&q=80" alt="Full Smart Home Integration">
+                </div>
+                <div class="product-info">
+                    <div class="card-header">
+                        <span class="category-tag">Smart Home</span>
+                        <span class="rating"><i class="fa-solid fa-house-signal"></i> On-Site</span>
+                    </div>
+                    <h3>Full Smart Home Automation Integration</h3>
+                    <p class="description">Unified installation of Matter/Zigbee hubs, automated lighting controls, smart locks, and AI surveillance systems.</p>
+                    <div class="product-bottom">
+                        <span class="price">From $249.99</span>
+                        <button class="add-to-cart-btn" onclick="openBookingModal('Full Smart Home Integration')">Book Service</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service Card 4 -->
+            <div class="product-card service-item" data-category="setup">
+                <div class="img-box">
+                    <img src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?auto=format&fit=crop&w=800&q=80" alt="VR Room Calibration">
+                </div>
+                <div class="product-info">
+                    <div class="card-header">
+                        <span class="category-tag">Custom Setup</span>
+                        <span class="rating"><i class="fa-solid fa-vr-cardboard"></i> On-Site / Remote</span>
+                    </div>
+                    <h3>VR/AR Arena Setup & Spatial Calibration</h3>
+                    <p class="description">Professional room-scale tracking setup, base station mounting, and graphics optimization for VR setups.</p>
+                    <div class="product-bottom">
+                        <span class="price">From $119.99</span>
+                        <button class="add-to-cart-btn" onclick="openBookingModal('VR/AR Arena Setup')">Book Service</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service Card 5 -->
+            <div class="product-card service-item" data-category="repair">
+                <div class="img-box">
+                    <img src="https://images.unsplash.com/photo-1527977966376-1c8408f9f108?auto=format&fit=crop&w=800&q=80" alt="Drone Fleet Maintenance">
+                </div>
+                <div class="product-info">
+                    <div class="card-header">
+                        <span class="category-tag">Hardware Repair</span>
+                        <span class="rating"><i class="fa-solid fa-plane"></i> Express Service</span>
+                    </div>
+                    <h3>Drone Fleet Maintenance & Calibration</h3>
+                    <p class="description">Gimbal recalibration, motor replacement, firmware flashing, and shell repairs for commercial drones.</p>
+                    <div class="product-bottom">
+                        <span class="price">From $99.99</span>
+                        <button class="add-to-cart-btn" onclick="openBookingModal('Drone Fleet Maintenance')">Book Service</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service Card 6 -->
+            <div class="product-card service-item" data-category="enterprise">
+                <div class="img-box">
+                    <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=800&q=80" alt="Enterprise Network Deployment">
+                </div>
+                <div class="product-info">
+                    <div class="card-header">
+                        <span class="category-tag">Enterprise</span>
+                        <span class="rating"><i class="fa-solid fa-network-wired"></i> Commercial</span>
+                    </div>
+                    <h3>Enterprise Mesh Wi-Fi & Cyber-Security</h3>
+                    <p class="description">High-density Wi-Fi 7 mesh deployments, zero-trust network configuration, and hardware firewall integration.</p>
+                    <div class="product-bottom">
+                        <span class="price">From $399.99</span>
+                        <button class="add-to-cart-btn" onclick="openBookingModal('Enterprise Network Deployment')">Book Service</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Interactive Instant Service Cost Estimator -->
+    <section class="calculator-section">
+        <div class="calculator-card">
+            <h2><i class="fa-solid fa-calculator" style="color: var(--accent-secondary);"></i> Service Cost Estimator</h2>
+            <p>Select your requirements below to calculate an instant estimated cost for your service package.</p>
+            
+            <form id="estimator-form" class="estimator-grid">
+                <div class="form-group">
+                    <label for="calc-service">Primary Service Type:</label>
+                    <select id="calc-service" onchange="calculateCost()">
+                        <option value="79.99">Hardware Repair / Diagnostics ($79.99)</option>
+                        <option value="149.99">Custom PC Build ($149.99)</option>
+                        <option value="249.99">Smart Home Installation ($249.99)</option>
+                        <option value="119.99">VR Room Setup ($119.99)</option>
+                        <option value="399.99">Enterprise Network Deploy ($399.99)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="calc-urgency">Service Speed:</label>
+                    <select id="calc-urgency" onchange="calculateCost()">
+                        <option value="1">Standard (3-5 Days) - No Extra</option>
+                        <option value="1.3">Express (24 Hours) - +30%</option>
+                        <option value="1.6">Same-Day Priority - +60%</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Additional Add-ons:</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" class="addon" value="29.99" onchange="calculateCost()"> Extended 1-Year Coverage (+$29.99)</label>
+                        <label><input type="checkbox" class="addon" value="49.99" onchange="calculateCost()"> On-Site Pickup & Return (+$49.99)</label>
+                        <label><input type="checkbox" class="addon" value="19.99" onchange="calculateCost()"> Priority Diagnostic Report (+$19.99)</label>
+                    </div>
+                </div>
+
+                <div class="estimator-result">
+                    <span>Estimated Total:</span>
+                    <h3 id="calc-total">$79.99</h3>
+                    <button type="button" class="btn primary-btn" onclick="bookEstimatedPackage()">Book Estimated Package</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Service Booking Modal -->
+    <div class="modal-overlay" id="booking-modal">
+        <div class="modal-content" style="max-width: 500px;">
+            <button class="close-modal" onclick="closeBookingModal()">&times;</button>
+            <h2 style="text-align: left; margin-bottom: 0.5rem;" id="booking-modal-title">Book Service</h2>
+            <p class="description" style="margin-bottom: 1.5rem;">Fill out your details to schedule a service slot with a NEXUS certified technician.</p>
+            
+            <form id="booking-form" onsubmit="submitBooking(event)">
+                <div class="form-group" style="margin-bottom: 1rem;">
+                    <label style="display:block; color: var(--text-secondary); margin-bottom: 0.3rem;">Full Name</label>
+                    <input type="text" required class="form-input" placeholder="Alex Mercer">
+                </div>
+                <div class="form-group" style="margin-bottom: 1rem;">
+                    <label style="display:block; color: var(--text-secondary); margin-bottom: 0.3rem;">Email Address</label>
+                    <input type="email" required class="form-input" placeholder="alex@nexus.tech">
+                </div>
+                <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <label style="display:block; color: var(--text-secondary); margin-bottom: 0.3rem;">Preferred Date</label>
+                    <input type="date" required class="form-input">
+                </div>
+                <button type="submit" class="btn primary-btn full-width">Confirm Booking Request</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2026 NEXUS Tech Inc. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- External JS Script -->
+    <script src="Assets/JS/services.js"></script>
+    <script src="Assets/JS/cart.js"></script>
+</body>
+</html>

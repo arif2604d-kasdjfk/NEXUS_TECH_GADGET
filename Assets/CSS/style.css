@@ -54,15 +54,23 @@ body {
     gap: 2rem;
 }
 
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
 .nav-links a {
     color: var(--text-secondary);
     text-decoration: none;
     font-weight: 500;
-    transition: color 0.3s;
+    transition: color 0.3s ease;
 }
 
-.nav-links a:hover {
+/* Hover and Active/Current Page Link State */
+.nav-links a:hover,
+.nav-links a.active {
     color: var(--accent-secondary);
+    font-weight: 600;
 }
 
 .cart-btn {

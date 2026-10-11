@@ -7,8 +7,11 @@
     --card-bg: #131c38;
     --card-hover: #192447;
     --input-bg: #0f172a;
-    --border-color: #232e52;
+    --border-color: #334155;
     --accent-blue: #5b51d8;
+    --accent-secondary: #06b6d4;/* Cyan */
+    --accent-primary: #6366f1;  /* Indigo */
+    --bg-secondary: #1e293b;    /* Slate 800 */
     --accent-blue-hover: #483ec7;
     --badge-bg: rgba(91, 81, 216, 0.18);
     --text-primary: #ffffff;
@@ -64,6 +67,12 @@ body {
     gap: 2.2rem;
 }
 
+/* Header Navbar Links */
+.nav-links {
+    display: flex;
+    gap: 2.2rem;
+}
+
 .nav-links a {
     color: var(--text-secondary);
     text-decoration: none;
@@ -72,31 +81,29 @@ body {
     transition: var(--transition);
 }
 
+/* Active State matching image (White & Bold) */
 .nav-links a:hover,
 .nav-links a.active {
-    color: var(--text-primary);
+    color: #06b6d4; /* or var(--accent-secondary) */
+    font-weight: 700;
 }
-
+/* Cart Button (Contact Page Unified Style) */
 .cart-btn {
-    background-color: rgba(255, 255, 255, 0.05);
-    border: 1px solid var(--border-color);
+    background: var(--bg-secondary);
     color: var(--text-primary);
-    padding: 0.65rem 1.3rem;
-    border-radius: 50px;
-    font-family: inherit;
-    font-size: 0.9rem;
-    font-weight: 600;
+    border: 1px solid var(--border-color);
+    padding: 0.6rem 1.2rem;
+    border-radius: 20px;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    transition: var(--transition);
+    font-weight: 600;
+    transition: 0.3s;
 }
 
 .cart-btn:hover {
-    background-color: var(--accent-blue);
-    border-color: var(--accent-blue);
+    border-color: var(--accent-primary);
 }
+
+
 
 /* Contact Container */
 .contact-container {

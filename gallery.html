@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | NEXUS - Next-Gen Tech & Gadgets</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- External CSS Stylesheet -->
+    <link rel="stylesheet" href="Assets/CSS/gallery.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%230f172a'/><path d='M30 70 V30 L55 60 V30 H70 V70 L45 40 V70 Z' fill='%2306b6d4'/><circle cx='70' cy='70' r='5' fill='%236366f1'/></svg>">
+</head>
+<body>
+
+    <!-- Header / Navigation -->
+    <header class="navbar">
+        <div class="logo">NEXUS<span>.</span></div>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="gallery.html" class="active">Gallery</a>
+            <a href="services.html">Services</a>
+            <a href="contact_us.html">Contact Us</a>
+            <a href="about_us.html">About Us</a>
+        </nav>
+        <div class="nav-actions">
+            <button class="cart-btn" id="cart-toggle">🛒 Cart (<span id="cart-count">0</span>)</button>
+        </div>
+    </header>
+
+    <!-- Gallery Hero Section -->
+    <section class="gallery-hero">
+        <div class="gallery-hero-content">
+            <span class="badge">✨ Product Showcase</span>
+            <h1>Explore Next-Gen Gadgets</h1>
+            <p>Immerse yourself in our full showcase of futuristic technology, premium audio, smart wearables, and autonomous hardware.</p>
+        </div>
+    </section>
+
+    <!-- Gallery Toolbar Controls (Filters & Search) -->
+    <section class="gallery-toolbar">
+        <div class="toolbar-container">
+            <!-- Search Bar -->
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" id="gallery-search" placeholder="Search tech, models, specs..." onkeyup="filterGallery()">
+            </div>
+
+            <!-- Filter Categories -->
+            <div class="filter-tabs">
+                <button class="filter-btn active" data-filter="all" onclick="filterCategory('all', this)">All</button>
+                <button class="filter-btn" data-filter="Audio" onclick="filterCategory('Audio', this)">Audio</button>
+                <button class="filter-btn" data-filter="Wearables" onclick="filterCategory('Wearables', this)">Wearables</button>
+                <button class="filter-btn" data-filter="VR & AR" onclick="filterCategory('VR & AR', this)">VR & AR</button>
+                <button class="filter-btn" data-filter="Drones" onclick="filterCategory('Drones', this)">Drones</button>
+                <button class="filter-btn" data-filter="Smart Home" onclick="filterCategory('Smart Home', this)">Smart Home</button>
+            </div>
+
+            <!-- Sort Dropdown -->
+            <div class="sort-box">
+                <label for="sort-select"><i class="fa-solid fa-arrow-down-short-wide"></i> Sort By:</label>
+                <select id="sort-select" onchange="sortGallery()">
+                    <option value="default">Featured</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="rating">Top Rated</option>
+                </select>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Items Grid -->
+    <section class="gallery-section">
+        <div class="product-grid" id="gallery-grid">
+            
+            <!-- Gallery Card 1 -->
+            <div class="product-card gallery-item" data-category="Audio" data-price="299.99" data-rating="4.9" data-title="SonicPro Wireless Headphones">
+                <div class="img-box">
+                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80" alt="SonicPro Wireless Headphones">
+                    <button class="quick-view-btn" onclick="openModal(1)"><i class="fa-solid fa-eye"></i> Quick View</button>
+                </div>
+                <div class="product-info">
+                    <div class="card-header">
+                        <span class="category-tag">Audio</span>
+                        <span class="rating"><i class="fa-solid fa-star"></i> 4.9</span>
+                    </div>
+                    <h3>SonicPro Wireless Headphones</h3>
+                    <p class="description">Active noise cancellation with 40-hour battery life and spatial audio.</p>
+                    <div class="product-bottom">
+                        <span class="price">$299.99</span>
+                        <button class="add-to-cart-btn" onclick="addToCart('SonicPro Wireless Headphones', 299.99)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gallery Card 2 -->
+            <div class="product-card gallery-item" data-category="Wearables" data-price="199.99" data-rating="4.8" data-title="Aura Smartwatch V2">
+                <div class="img-box">
+                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80" alt="Aura Smartwatch V2">
+                    <button class="quick-view-btn" onclick="openModal(2)"><i class="fa-solid fa-eye"></i> Quick View</button>
+                </div>
+                <div class="product-info">
+                    <div class="card-header">
+                        <span class="category-tag">Wearables</span>
+                        <span class="rating"><i class="fa-solid fa-star"></i> 4.8</span>
+                    </div>
+                    <h3>Aura Smartwatch V2</h3>
+                    <p class="description">Real-time biometrics, ECG monitoring, vibrant AMOLED, 50m waterproof.</p>
+                    <div class="product-bottom">
+                        <span class="price">$199.99</span>
+                        <button class="add-to-cart-btn" onclick="addToCart('Aura Smartwatch V2', 199.99)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gallery Card 3 -->
+            <div class="product-card gallery-item" data-category="VR & AR" data-price="799.99" data-rating="5.0" data-title="Nexus Vision Pro VR">
+                <div class="img-box">
+                    <img src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?auto=format&fit=crop&w=800&q=80" alt="Nexus Vision Pro VR">
+                    <button class="quick-view-btn" onclick="openModal(3)"><i class="fa-solid fa-eye"></i> Quick View</button>
+                </div>
+                <div class="product-info">
+                    <div class="card-header">
+                        <span class="category-tag">VR & AR</span>
+                        <span class="rating"><i class="fa-solid fa-star"></i> 5.0</span>
+                    </div>
+                    <h3>Nexus Vision Pro VR</h3>
+                    <p class="description">Next-gen 8K resolution VR headset with fluid eye tracking & haptics.</p>
+                    <div class="product-bottom">
+                        <span class="price">$799.99</span>
+                        <button class="add-to-cart-btn" onclick="addToCart('Nexus Vision Pro VR', 799.99)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gallery Card 4 -->
+            <div class="product-card gallery-item" data-category="Drones" data-price="499.99" data-rating="4.7" data-title="SkyHawk 4K Drone">
+                <div class="img-box">
+                    <img src="https://images.unsplash.com/photo-1527977966376-1c8408f9f108?auto=format&fit=crop&w=800&q=80" alt="SkyHawk 4K Drone">
+                    <button class="quick-view-btn" onclick="openModal(4)"><i class="fa-solid fa-eye"></i> Quick View</button>
+                </div>
+                <div class="product-info">
+                    <div class="card-header">
+                        <span class="category-tag">Drones</span>
+                        <span class="rating"><i class="fa-solid fa-star"></i> 4.7</span>
+                    </div>
+                    <h3>SkyHawk 4K Drone</h3>
+                    <p class="description">Ultra HD video recording with 360° obstacle avoidance and auto-follow.</p>
+                    <div class="product-bottom">
+                        <span class="price">$499.99</span>
+                        <button class="add-to-cart-btn" onclick="addToCart('SkyHawk 4K Drone', 499.99)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gallery Card 5 -->
+            <div class="product-card gallery-item" data-category="Audio" data-price="149.99" data-rating="4.6" data-title="Pulse Soundbar Ultra">
+                <div class="img-box">
+                    <img src="https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=800&q=80" alt="Pulse Soundbar Ultra">
+                    <button class="quick-view-btn" onclick="openModal(5)"><i class="fa-solid fa-eye"></i> Quick View</button>
+                </div>
+                <div class="product-info">
+                    <div class="card-header">
+                        <span class="category-tag">Audio</span>
+                        <span class="rating"><i class="fa-solid fa-star"></i> 4.6</span>
+                    </div>
+                    <h3>Pulse Soundbar Ultra</h3>
+                    <p class="description">Cinematic Dolby Atmos surround audio with wireless subwoofer punch.</p>
+                    <div class="product-bottom">
+                        <span class="price">$149.99</span>
+                        <button class="add-to-cart-btn" onclick="addToCart('Pulse Soundbar Ultra', 149.99)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gallery Card 6 -->
+            <div class="product-card gallery-item" data-category="Smart Home" data-price="129.99" data-rating="4.8" data-title="Omni Smart Hub Controller">
+                <div class="img-box">
+                    <img src="https://images.unsplash.com/photo-1558089687-f282ffcbc126?auto=format&fit=crop&w=800&q=80" alt="Omni Smart Hub Controller">
+                    <button class="quick-view-btn" onclick="openModal(6)"><i class="fa-solid fa-eye"></i> Quick View</button>
+                </div>
+                <div class="product-info">
+                    <div class="card-header">
+                        <span class="category-tag">Smart Home</span>
+                        <span class="rating"><i class="fa-solid fa-star"></i> 4.8</span>
+                    </div>
+                    <h3>Omni Smart Hub Controller</h3>
+                    <p class="description">Unified home control display with voice AI commands & automation setup.</p>
+                    <div class="product-bottom">
+                        <span class="price">$129.99</span>
+                        <button class="add-to-cart-btn" onclick="addToCart('Omni Smart Hub Controller', 129.99)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gallery Card 7 -->
+            <div class="product-card gallery-item" data-category="VR & AR" data-price="349.99" data-rating="4.5" data-title="Aero AR Smart Glasses">
+                <div class="img-box">
+                    <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?auto=format&fit=crop&w=800&q=80" alt="Aero AR Smart Glasses">
+                    <button class="quick-view-btn" onclick="openModal(7)"><i class="fa-solid fa-eye"></i> Quick View</button>
+                </div>
+                <div class="product-info">
+                    <div class="card-header">
+                        <span class="category-tag">VR & AR</span>
+                        <span class="rating"><i class="fa-solid fa-star"></i> 4.5</span>
+                    </div>
+                    <h3>Aero AR Smart Glasses</h3>
+                    <p class="description">Lightweight augmented reality display overlay for navigation & media.</p>
+                    <div class="product-bottom">
+                        <span class="price">$349.99</span>
+                        <button class="add-to-cart-btn" onclick="addToCart('Aero AR Smart Glasses', 349.99)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gallery Card 8 -->
+            <div class="product-card gallery-item" data-category="Wearables" data-price="89.99" data-rating="4.4" data-title="Titan Fitness Ring">
+                <div class="img-box">
+                    <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=800&q=80" alt="Titan Fitness Ring">
+                    <button class="quick-view-btn" onclick="openModal(8)"><i class="fa-solid fa-eye"></i> Quick View</button>
+                </div>
+                <div class="product-info">
+                    <div class="card-header">
+                        <span class="category-tag">Wearables</span>
+                        <span class="rating"><i class="fa-solid fa-star"></i> 4.4</span>
+                    </div>
+                    <h3>Titan Fitness Ring</h3>
+                    <p class="description">Discreet titanium health wearable with sleep analysis & stress metrics.</p>
+                    <div class="product-bottom">
+                        <span class="price">$89.99</span>
+                        <button class="add-to-cart-btn" onclick="addToCart('Titan Fitness Ring', 89.99)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- No Results Indicator -->
+        <div id="no-results" class="no-results hidden">
+            <i class="fa-solid fa-ghost"></i>
+            <h3>No matching products found</h3>
+            <p>Try searching for another device or resetting the filters.</p>
+        </div>
+    </section>
+
+    <!-- Quick View Lightbox Modal -->
+    <div class="modal-overlay" id="product-modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal()">&times;</button>
+            <div class="modal-grid">
+                <div class="modal-img-container">
+                    <img id="modal-img" src="" alt="Product Detail Image">
+                </div>
+                <div class="modal-details">
+                    <span class="category-tag" id="modal-category">Category</span>
+                    <h2 id="modal-title">Product Name</h2>
+                    <div class="modal-rating" id="modal-rating"><i class="fa-solid fa-star"></i> 5.0</div>
+                    <p class="modal-price" id="modal-price">$0.00</p>
+                    <p class="description" id="modal-description">Detailed description will load here.</p>
+                    <div class="specs-list">
+                        <h4>Technical Specifications:</h4>
+                        <ul id="modal-specs">
+                            <li>Bluetooth 5.3 Low Energy</li>
+                            <li>IP68 Water Resistance</li>
+                            <li>Fast-Charging USB-C</li>
+                        </ul>
+                    </div>
+                    <button class="btn primary-btn full-width" id="modal-add-btn">Add to Shopping Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2026 NEXUS Tech Inc. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JS Script Link -->
+    <script src="Assets/JS/gallery.js"></script>
+    <script src="Assets/JS/cart.js"></script>
+</body>
+</html>
